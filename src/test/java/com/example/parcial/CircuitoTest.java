@@ -8,13 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class CircuitoTest {
     @Test
     void crear_circuito_test(){
-        Piloto piloto = new Piloto("Juan", "Argentina");
-        Mecanico mecanico = new Mecanico("Joaco", "Argentina");
-        Ingeniero ingeniero = new Ingeniero("Ramiro", "Argentina");
-
-        
-
-
 
 
     }

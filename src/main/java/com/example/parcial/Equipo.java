@@ -12,7 +12,7 @@ public class Equipo implements ISponsoreable{
     private List<SponsorContrato> sponsors;
 
 
-    public Equipo(String nombre, List<Piloto> pilotos, List<Mecanico> mecanicos, Ingeniero ingenieroPrincipal) {
+    public Equipo(String nombre, Ingeniero ingenieroPrincipal) {
         this.nombre = nombre;
         this.pilotos = new ArrayList<>();
         this.mecanicos = new ArrayList<>();
@@ -22,6 +22,10 @@ public class Equipo implements ISponsoreable{
 
     public void agregarPiloto(Piloto piloto) {
         pilotos.add(piloto);
+    }
+
+    public void agregarMecanico(Mecanico mecanico) {
+        mecanicos.add(mecanico);
     }
 
     public String getNombre() {

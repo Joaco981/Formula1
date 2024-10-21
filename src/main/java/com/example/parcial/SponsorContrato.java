@@ -8,9 +8,8 @@ public class SponsorContrato {
     private Date fechaHasta;
     private Sponsor sponsor;
 
-
-
-    public SponsorContrato(String ubicacion, Date fechaDesde, Date fechaHasta) {
+    public SponsorContrato(Sponsor sponsor, String ubicacion, Date fechaDesde, Date fechaHasta) {
+        this.sponsor = sponsor;
         this.ubicacion = ubicacion;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;

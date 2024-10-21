@@ -8,9 +8,9 @@ public interface ISponsoreable {
     
     List<SponsorContrato> getSponsors();
     void agregar(SponsorContrato);
-    void agregar(Sponsor, ubicacion, fechaDesde);
-    void remover(Sponsor);
+    void agregarSC(Sponsor, ubicacion, fechaDesde);
+    void removerSponsor(Sponsor);
     void remover(string);
-    void remover(Sponsor, ubicacion);
+    void removerSC(Sponsor, ubicacion);
     void sponsorsHabilitados();
 }
