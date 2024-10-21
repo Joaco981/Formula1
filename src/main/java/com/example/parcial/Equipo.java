@@ -1,18 +1,23 @@
 package com.example.parcial;
 
+import com.example.parcial.interfaces.ISponsoreable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Equipo {
+public class Equipo implements ISponsoreable{
     private String nombre;
     private List<Piloto> pilotos;
     private List<Mecanico> mecanicos;
     private Ingeniero ingenieroPrincipal;
+    private List<SponsorContrato> sponsors;
 
 
-    public Equipo(String nombre) {
+    public Equipo(String nombre, List<Piloto> pilotos, List<Mecanico> mecanicos, Ingeniero ingenieroPrincipal) {
         this.nombre = nombre;
         this.pilotos = new ArrayList<>();
+        this.mecanicos = new ArrayList<>();
+        this.ingenieroPrincipal = ingenieroPrincipal;
+        this.sponsors = new ArrayList<>();
     }
 
     public void agregarPiloto(Piloto piloto) {
@@ -39,5 +44,9 @@ public class Equipo {
         this.ingenieroPrincipal = ingenieroPrincipal;
     } 
 
+    public List<SponsorContrato> getSponsors() {
+        return sponsors;
+    }
+    
 
 }

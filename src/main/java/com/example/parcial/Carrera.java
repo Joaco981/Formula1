@@ -8,8 +8,10 @@ public class Carrera {
     private List<Piloto> participantes;
     
     
-    public Carrera(String fecha) {
+    public Carrera(String fecha, Circuito circuito, List<Piloto> participantes) {
         this.fecha = fecha;
+        this.circuito = circuito;
+        this.participantes = participantes;
     }
 
     public String getFecha() {

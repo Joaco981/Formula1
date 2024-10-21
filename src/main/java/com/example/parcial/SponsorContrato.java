@@ -6,6 +6,8 @@ public class SponsorContrato {
     private String ubicacion;
     private Date fechaDesde;
     private Date fechaHasta;
+    private Sponsor sponsor;
+
 
 
     public SponsorContrato(String ubicacion, Date fechaDesde, Date fechaHasta) {
@@ -28,6 +30,10 @@ public class SponsorContrato {
 
     public void setFechaHasta(Date fechaHasta) {
         this.fechaHasta = fechaHasta;
+    }
+
+    public Sponsor getSponsor() {
+        return sponsor;
     }
 
 }
