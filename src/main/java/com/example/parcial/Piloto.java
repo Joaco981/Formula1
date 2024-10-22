@@ -1,5 +1,6 @@
 package com.example.parcial;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,42 +10,47 @@ public class Piloto
             extends Persona 
             implements ISponsoreable{
 
-    private List<SponsorContrato> sponsors;
-    private List<SponsorContrato> sponsorsHabilitados;
+    private List<SponsorContrato> sponsors = new ArrayList<>();
+    private List<SponsorContrato> sponsorsHabilitados = new ArrayList<>();
 
     public Piloto(String nombre, String nacionalidad) {
         super(nombre, nacionalidad);
     }
 
-////////////////////////////////////////////////////////////////    
+
+////////////////////////////////////////////////////////////////
     @Override
-    public void agregar(SponsorContrato sc) {
+    public List<SponsorContrato> getSponsorContrato() {
+        return sponsors;
+    }
+
+    @Override
+    public void agregar(SponsorContrato sponsorContrato) {
+        sponsors.add(sponsorContrato);
+    }
+
+    @Override
+    public void agregar(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
+        sponsors.add(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
+    }
+
+    @Override
+    public void remover(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
+        sponsors.remove(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
+    }
+
+    //@Override
+    //public void remover(Sponsor sponsor) {
+    //    sponsors.remove(sponsor);
+    //}
+
+    @Override
+    public void remover(String nombreSponsor) {
         
     }
 
     @Override
-    public void agregarSC() {
-        
-    }
-
-    @Override
-    public void removerSponsor() {
-        
-    }
-
-    @Override
-    public void remover() {
-        
-    }
-
-    @Override
-    public void removerSC(SponsorContrato sc) {
-        
-    }
-
-    @Override
-    public int sponsorHabilitados(){
-
+    public int getSponsorHabilitados() {
         for (SponsorContrato sponsorContrato : sponsors) {
             if (sponsorContrato.getFechaHasta() != null) {
                 sponsorsHabilitados.add(sponsorContrato);
@@ -52,8 +58,7 @@ public class Piloto
         }
 
         return sponsorsHabilitados.size();
+    }  
 
-    }
-    
 }
 

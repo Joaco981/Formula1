@@ -1,5 +1,6 @@
 package com.example.parcial;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +13,14 @@ public class Circuito
     private int longitud;
     private int vueltasCantidad;
     private List<SponsorContrato> sponsors;
+    private List<SponsorContrato> sponsorsHabilitados;
 
 
     public Circuito(String nombre, int longitud, int vueltasCantidad) {
         setNombre(nombre);
         setLongitud(longitud);
         setVueltasCantidad(vueltasCantidad);
-        setSponsors(sponsors);
+        setSponsors(new ArrayList<>());
     }
 
     public String getNombre() {
@@ -55,33 +57,47 @@ public class Circuito
 
 ////////////////////////////////////////////////////////////////
     @Override
-    public void agregar() {
+    public List<SponsorContrato> getSponsorContrato() {
+        return sponsors;
+    }
+
+    @Override
+    public void agregar(SponsorContrato sponsorContrato) {
+        sponsors.add(sponsorContrato);
+    }
+
+    @Override
+    public void agregar(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
+        sponsors.add(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
+    }
+
+    @Override
+    public void remover(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+    }
+
+    //@Override
+    //public void remover(Sponsor sponsor) {
+    //    sponsors.remove(sponsor);
+    //}
+
+    @Override
+    public void remover(String nombreSponsor) {
         
     }
 
     @Override
-    public void agregarSC() {
-        
-    }
+    public int getSponsorHabilitados() {
+        for (SponsorContrato sponsorContrato : sponsors) {
+            if (sponsorContrato.getFechaHasta() != null) {
+                sponsorsHabilitados.add(sponsorContrato);
+            }
+        }
 
-    @Override
-    public void removerSponsor() {
-        
-    }
+        return sponsorsHabilitados.size();
+    }  
 
-    @Override
-    public void remover() {
-        
-    }
 
-    @Override
-    public void removerSC() {
-        
-    }
-
-    @Override
-    public void sponsorsHabilitados() {
-        
-    }
+    
     
 }

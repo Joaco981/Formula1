@@ -8,10 +8,12 @@ import com.example.parcial.SponsorContrato;
 
 public interface ISponsoreable {
     
-    List<SponsorContrato> getSponsors();
-    void agregarSponsor(Sponsor sponsor);
-    void removerSponsor(Sponsor sponsor);
-    void agregarSC(SponsorContrato sc);
-    void removerSC(SponsorContrato sc);
-    List<SponsorContrato> sponsorsHabilitados();
+    List<SponsorContrato> getSponsorContrato(); 
+    void agregar(SponsorContrato sponsorContrato);
+    void agregar(Sponsor sponsor,String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta );
+    void remover(Sponsor contrato,String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta);
+    //void remover(Sponsor sponsor);
+    void remover(String nombreSponsor);
+    int getSponsorHabilitados(); 
+    
 }

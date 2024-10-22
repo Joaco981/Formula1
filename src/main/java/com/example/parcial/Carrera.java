@@ -1,7 +1,7 @@
 package com.example.parcial;
 
-import java.util.ArrayList;
 import java.time.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Carrera {
@@ -14,8 +14,8 @@ public class Carrera {
     public Carrera(LocalDate fecha, Circuito circuito, List<Vuelta> vueltas) {
         setCircuito(circuito);
         setFecha(fecha);
-        setVueltas(vueltas);
-        setParticipantes(participantes);
+        setVueltas(new ArrayList<>());
+        setParticipantes(new ArrayList<>());
     }
 
     public LocalDate getFecha() {

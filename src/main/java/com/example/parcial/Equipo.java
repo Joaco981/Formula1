@@ -1,6 +1,8 @@
 package com.example.parcial;
 
 import com.example.parcial.interfaces.ISponsoreable;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,14 +14,15 @@ public class Equipo
     private List<Mecanico> mecanicos;
     private Ingeniero ingenieroPrincipal;
     private List<SponsorContrato> sponsors;
+    private List<SponsorContrato> sponsorsHabilitados;
 
 
     public Equipo(String nombre, Ingeniero ingenieroPrincipal) {
         setNombre(nombre);
         setIngenieroPrincipal(ingenieroPrincipal);
-        setPilotos(pilotos);
-        setMecanicos(mecanicos);
-        setSponsors(sponsors);
+        setPilotos(new ArrayList<>());
+        setMecanicos(new ArrayList<>());
+        setSponsors(new ArrayList<>());
     }
 
     public void agregarPiloto(Piloto piloto) {
@@ -70,40 +73,47 @@ public class Equipo
         this.sponsors = sponsors;
     }
 
-    public void agregarSponsor(SponsorContrato sponsor) {
-        sponsors.add(sponsor);
-    }
-
 ////////////////////////////////////////////////////////////////
+
     @Override
-    public void agregar(SponsorContrato sc) {
+    public List<SponsorContrato> getSponsorContrato() {
+        return sponsors;
+    }
+
+    @Override
+    public void agregar(SponsorContrato sponsorContrato) {
+        sponsors.add(sponsorContrato);
+    }
+
+    @Override
+    public void agregar(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
+        sponsors.add(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
+    }
+
+    @Override
+    public void remover(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+    }
+
+    //@Override
+    //public void remover(Sponsor sponsor) {
+    //    sponsors.remove(sponsor);
+    //}
+
+    @Override
+    public void remover(String nombreSponsor) {
         
     }
 
     @Override
-    public void agregarSC() {
-        
-    }
+    public int getSponsorHabilitados() {
+        for (SponsorContrato sponsorContrato : sponsors) {
+            if (sponsorContrato.getFechaHasta() != null) {
+                sponsorsHabilitados.add(sponsorContrato);
+            }
+        }
 
-    @Override
-    public void removerSponsor() {
-        
-    }
-
-    @Override
-    public void remover() {
-        
-    }
-
-    @Override
-    public void removerSC() {
-        
-    }
-
-    @Override
-    public void sponsorsHabilitados() {
-        
-    }
-    
+        return sponsorsHabilitados.size();
+    }  
 
 }
