@@ -15,6 +15,7 @@ public class SponsorContrato {
         setFechaHasta(fechaHasta);
     }
 
+
     public String getUbicacion() {
         return ubicacion;
     }
@@ -23,12 +24,12 @@ public class SponsorContrato {
         this.ubicacion = ubicacion;
     }
     
-    public LocalDate getFechaDesde() {
-        return fechaDesde;
-    }
-
     public void setFechaDesde(LocalDate fechaDesde) {
         this.fechaDesde = fechaDesde;
+    }
+
+    public LocalDate getFechaDesde() {
+        return fechaDesde;
     }
 
     public LocalDate getFechaHasta() {

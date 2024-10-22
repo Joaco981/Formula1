@@ -17,7 +17,6 @@ public class Piloto
         super(nombre, nacionalidad);
     }
 
-
 ////////////////////////////////////////////////////////////////
     @Override
     public List<SponsorContrato> getSponsorContrato() {
@@ -31,7 +30,8 @@ public class Piloto
 
     @Override
     public void agregar(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
-        sponsors.add(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
+        var sc1 = new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta);
+        this.agregar(sc1);
     }
 
     @Override
@@ -39,15 +39,16 @@ public class Piloto
         sponsors.remove(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
     }
 
-    //@Override
-    //public void remover(Sponsor sponsor) {
-    //    sponsors.remove(sponsor);
-    //}
+    @Override
+    public void remover(Sponsor sponsor) {
+        sponsors.removeIf(sponsorContrato -> sponsorContrato.getSponsor().equals(sponsor));
+    }
 
     @Override
     public void remover(String nombreSponsor) {
-        
+        sponsors.removeIf(sponsorContrato -> sponsorContrato.getSponsor().getNombre().equals(nombreSponsor));
     }
+
 
     @Override
     public int getSponsorHabilitados() {
