@@ -15,7 +15,6 @@ public class SponsorContrato {
         setFechaHasta(fechaHasta);
     }
 
-
     public String getUbicacion() {
         return ubicacion;
     }

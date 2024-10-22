@@ -29,6 +29,19 @@ public class FiltroTest {
 
 
         assertEquals(3, f1.filtrar(pilotos).size());
-    }        
-        
-}
+    }
+    
+    @Test
+    void filtrar_pilotos_por_vuelta_test() {
+        Circuito circuito = new Circuito("Austin", 1234, 56);
+        Circuito circuito2 = new Circuito("Baku", 1234, 56);
+        Circuito circuito3 = new Circuito("Suzuka", 1234, 56);
+        Circuito circuito4 = new Circuito("Corrientes", 1234, 56);
+        ArrayList<Piloto> pilotos = new ArrayList<>();
+
+
+        Predicate<Vuelta> predicado = 
+        Filtro f1 = new Filtro("Cantidad de vueltas del circuito Austin", predicado);
+
+    }
+}    
