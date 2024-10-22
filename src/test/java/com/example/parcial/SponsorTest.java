@@ -1,10 +1,7 @@
 package com.example.parcial;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import java.time.*;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,13 +15,11 @@ public class SponsorTest {
     }
 
     @Test 
-    void crear_un_sponsor_contrato_test() throws ParseException{
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        
-        Date fechaDesde = dateFormat.parse("29/09/2020");
-        Date fechaHasta = dateFormat.parse("29/09/2022");
-        
+    void crear_un_sponsor_contrato_test(){
         Sponsor s1 = new Sponsor("Coca Cola");
+        LocalDate fechaDesde = LocalDate.of(2024, 10, 21);
+        LocalDate fechaHasta = LocalDate.of(2026, 10, 21);
+
         SponsorContrato sc1 = new SponsorContrato(s1, "Argentina", fechaDesde, fechaHasta);
         assertEquals("Coca Cola", sc1.getSponsor().getNombre());    
         assertEquals("Argentina", sc1.getUbicacion());

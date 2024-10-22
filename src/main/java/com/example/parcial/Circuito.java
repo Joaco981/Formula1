@@ -35,5 +35,34 @@ public class Circuito implements ISponsoreable{
         return sponsors;
     }
 
+    @Override
+    public void agregar() {
+        
+    }
+
+    @Override
+    public void agregarSC() {
+        
+    }
+
+    @Override
+    public void removerSponsor() {
+        
+    }
+
+    @Override
+    public void remover() {
+        
+    }
+
+    @Override
+    public void removerSC() {
+        
+    }
+
+    @Override
+    public void sponsorsHabilitados() {
+        
+    }
     
 }

@@ -51,6 +51,40 @@ public class Equipo implements ISponsoreable{
     public List<SponsorContrato> getSponsors() {
         return sponsors;
     }
+
+    public void agregarSponsor(SponsorContrato sponsor) {
+        sponsors.add(sponsor);
+    }
+
+    @Override
+    public void agregar(SponsorContrato sc) {
+        
+    }
+
+    @Override
+    public void agregarSC() {
+        
+    }
+
+    @Override
+    public void removerSponsor() {
+        
+    }
+
+    @Override
+    public void remover() {
+        
+    }
+
+    @Override
+    public void removerSC() {
+        
+    }
+
+    @Override
+    public void sponsorsHabilitados() {
+        
+    }
     
 
 }

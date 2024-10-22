@@ -20,6 +20,38 @@ public class Piloto extends Persona implements ISponsoreable{
     public void setSponsors(List<SponsorContrato> sponsors) {
         this.sponsors = sponsors;
     }
+
+
+    @Override
+    public void agregar(SponsorContrato sc) {
+        
+    }
+
+    @Override
+    public void agregarSC() {
+        
+    }
+
+    @Override
+    public void removerSponsor() {
+        
+    }
+
+    @Override
+    public void remover() {
+        
+    }
+
+    @Override
+    public void removerSC(SponsorContrato sc) {
+        
+    }
+
+    @Override
+    public void sponsorsHabilitados() {
+        
+        
+    }
     
 }
 
