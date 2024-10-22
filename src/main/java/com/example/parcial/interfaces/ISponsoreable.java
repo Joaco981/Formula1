@@ -14,6 +14,6 @@ public interface ISponsoreable {
     void remover(Sponsor contrato,String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta);
     void remover(Sponsor sponsor);
     void remover(String nombreSponsor);
-    int getSponsorHabilitados(); 
+    List<SponsorContrato> getSponsorHabilitados(); 
     
 }

@@ -10,11 +10,20 @@ public class Piloto
             extends Persona 
             implements ISponsoreable{
 
+    private Equipo equipo;
     private List<SponsorContrato> sponsors = new ArrayList<>();
     private List<SponsorContrato> sponsorsHabilitados = new ArrayList<>();
 
     public Piloto(String nombre, String nacionalidad) {
         super(nombre, nacionalidad);
+    }
+
+    public Equipo getEquipo() {
+        return equipo;
+    } 
+    
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 
 ////////////////////////////////////////////////////////////////
@@ -59,7 +68,9 @@ public class Piloto
         }
 
         return sponsorsHabilitados.size();
-    }  
+    }
+
+   
 
 }
 

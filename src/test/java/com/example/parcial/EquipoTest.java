@@ -104,4 +104,29 @@ public class EquipoTest {
         e1.remover(sponsor1);
         assertEquals(1, e1.getSponsors().size());
     }
+
+
+    @Test
+    void saber_si_un_sponsor_esta_habilitado_o_no_test(){
+
+        Piloto p1 = new Piloto("Juan", "Argentina");
+        Piloto p2 = new Piloto("Ivan", "India");
+        Mecanico m1 = new Mecanico("Joaco", "Argentina");
+        Mecanico m2 = new Mecanico("Camello", "Argentina");        
+        Ingeniero inge = new Ingeniero("Ramiro", "Argentina");
+        Equipo e1 = new Equipo("esencia", inge);
+
+        e1.agregarPiloto(p1);
+        e1.agregarPiloto(p2);
+        e1.agregarMecanico(m1);        
+        e1.agregarMecanico(m2);
+        Sponsor sponsor1 = new Sponsor("Sponsor 1");
+        Sponsor sponsor2 = new Sponsor("Sponsor 2");
+
+        e1.agregar(new SponsorContrato(sponsor1, "Corrientes", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31)));
+        e1.agregar(new SponsorContrato(sponsor2, "Resistencia", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31)));
+
+        assertTrue(e1.estaHabilitado(sponsor1));
+        assertFalse(e1.estaHabilitado(sponsor2));
+    }
 }    

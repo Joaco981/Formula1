@@ -26,6 +26,7 @@ public class Equipo
     }
 
     public void agregarPiloto(Piloto piloto) {
+        piloto.setEquipo(this);
         pilotos.add(piloto);
     }
 
@@ -116,6 +117,6 @@ public class Equipo
         }
 
         return sponsorsHabilitados.size();
-    }  
+    }
 
 }
