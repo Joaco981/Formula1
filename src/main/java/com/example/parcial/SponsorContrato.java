@@ -27,6 +27,14 @@ public class SponsorContrato {
         this.fechaDesde = fechaDesde;
     }
 
+    public Date getFechaDesde() {
+        return fechaDesde;
+    }
+
+    public Date getFechaHasta() {
+        return fechaHasta;
+    }
+
     public void setFechaHasta(Date fechaHasta) {
         this.fechaHasta = fechaHasta;
     }
@@ -34,5 +42,6 @@ public class SponsorContrato {
     public Sponsor getSponsor() {
         return sponsor;
     }
+    
 
 }
