@@ -1,14 +1,14 @@
 package com.example.parcial;
 
-import java.util.Date;
+import java.time.*;
 
 public class SponsorContrato {
     private String ubicacion;
-    private Date fechaDesde;
-    private Date fechaHasta;
+    private LocalDate fechaDesde;
+    private LocalDate fechaHasta;
     private Sponsor sponsor;
 
-    public SponsorContrato(Sponsor sponsor, String ubicacion, Date fechaDesde, Date fechaHasta) {
+    public SponsorContrato(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
         this.sponsor = sponsor;
         this.ubicacion = ubicacion;
         this.fechaDesde = fechaDesde;
@@ -23,19 +23,19 @@ public class SponsorContrato {
         this.ubicacion = ubicacion;
     }
     
-    public void setFechaDesde(Date fechaDesde) {
+    public void setFechaDesde(LocalDate fechaDesde) {
         this.fechaDesde = fechaDesde;
     }
 
-    public Date getFechaDesde() {
+    public LocalDate getFechaDesde() {
         return fechaDesde;
     }
 
-    public Date getFechaHasta() {
+    public LocalDate getFechaHasta() {
         return fechaHasta;
     }
 
-    public void setFechaHasta(Date fechaHasta) {
+    public void setFechaHasta(LocalDate fechaHasta) {
         this.fechaHasta = fechaHasta;
     }
 

@@ -1,26 +1,26 @@
 package com.example.parcial;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.*;
 import java.util.List;
 
 public class Carrera {
-    private Date fecha;
+    private LocalDate fecha;
     private Circuito circuito;
     private List<Piloto> participantes;
     
     
-    public Carrera(Date fecha, Circuito circuito) {
+    public Carrera(LocalDate fecha, Circuito circuito) {
         this.fecha = fecha;
         this.circuito = circuito;
         this.participantes = new ArrayList<>();
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
     
