@@ -5,8 +5,8 @@ public class Persona {
     private String nacionalidad;
 
     public Persona(String nombre, String nacionalidad) {
-        this.nombre = nombre;
-        this.nacionalidad = nacionalidad;
+        setNombre(nombre);
+        setNacionalidad(nacionalidad);
     }
 
     public String getNombre() {

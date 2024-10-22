@@ -5,23 +5,18 @@ import java.util.List;
 
 import com.example.parcial.interfaces.ISponsoreable;
 
-public class Piloto extends Persona implements ISponsoreable{
+public class Piloto 
+            extends Persona 
+            implements ISponsoreable{
+
     private List<SponsorContrato> sponsors;
+    private List<SponsorContrato> sponsorsHabilitados;
 
     public Piloto(String nombre, String nacionalidad) {
         super(nombre, nacionalidad);
-        this.sponsors = new ArrayList<>();
     }
 
-    public List<SponsorContrato> getSponsors() {
-        return sponsors;
-    }
-
-    public void setSponsors(List<SponsorContrato> sponsors) {
-        this.sponsors = sponsors;
-    }
-
-
+////////////////////////////////////////////////////////////////    
     @Override
     public void agregar(SponsorContrato sc) {
         
@@ -48,9 +43,16 @@ public class Piloto extends Persona implements ISponsoreable{
     }
 
     @Override
-    public void sponsorsHabilitados() {
-        
-        
+    public int sponsorHabilitados(){
+
+        for (SponsorContrato sponsorContrato : sponsors) {
+            if (sponsorContrato.getFechaHasta() != null) {
+                sponsorsHabilitados.add(sponsorContrato);
+            }
+        }
+
+        return sponsorsHabilitados.size();
+
     }
     
 }

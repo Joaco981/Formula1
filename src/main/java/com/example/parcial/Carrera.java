@@ -12,10 +12,10 @@ public class Carrera {
     
     
     public Carrera(LocalDate fecha, Circuito circuito, List<Vuelta> vueltas) {
-        this.fecha = fecha;
-        this.circuito = circuito;
-        this.vueltas = new ArrayList<>();
-        this.participantes = new ArrayList<>();
+        setCircuito(circuito);
+        setFecha(fecha);
+        setVueltas(vueltas);
+        setParticipantes(participantes);
     }
 
     public LocalDate getFecha() {

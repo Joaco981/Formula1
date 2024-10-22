@@ -9,10 +9,10 @@ public class SponsorContrato {
     private Sponsor sponsor;
 
     public SponsorContrato(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
-        this.sponsor = sponsor;
-        this.ubicacion = ubicacion;
-        this.fechaDesde = fechaDesde;
-        this.fechaHasta = fechaHasta;
+        setSponsor(sponsor);
+        setUbicacion(ubicacion);
+        setFechaDesde(fechaDesde);
+        setFechaHasta(fechaHasta);
     }
 
     public String getUbicacion() {
@@ -23,12 +23,12 @@ public class SponsorContrato {
         this.ubicacion = ubicacion;
     }
     
-    public void setFechaDesde(LocalDate fechaDesde) {
-        this.fechaDesde = fechaDesde;
-    }
-
     public LocalDate getFechaDesde() {
         return fechaDesde;
+    }
+
+    public void setFechaDesde(LocalDate fechaDesde) {
+        this.fechaDesde = fechaDesde;
     }
 
     public LocalDate getFechaHasta() {
@@ -41,6 +41,10 @@ public class SponsorContrato {
 
     public Sponsor getSponsor() {
         return sponsor;
+    }
+
+    public void setSponsor(Sponsor sponsor) {
+        this.sponsor = sponsor;
     }
     
 

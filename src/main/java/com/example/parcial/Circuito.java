@@ -5,7 +5,9 @@ import java.util.List;
 
 import com.example.parcial.interfaces.ISponsoreable;
 
-public class Circuito implements ISponsoreable{
+public class Circuito 
+    implements ISponsoreable{
+
     private String nombre;
     private int longitud;
     private int vueltasCantidad;
@@ -13,28 +15,45 @@ public class Circuito implements ISponsoreable{
 
 
     public Circuito(String nombre, int longitud, int vueltasCantidad) {
-        this.nombre = nombre;
-        this.longitud = longitud;
-        this.vueltasCantidad = vueltasCantidad;
-        this.sponsors = new ArrayList<>();
+        setNombre(nombre);
+        setLongitud(longitud);
+        setVueltasCantidad(vueltasCantidad);
+        setSponsors(sponsors);
     }
 
     public String getNombre() {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public int getLongitud() {
         return longitud;
+    }
+
+    public void setLongitud(int longitud) {
+        this.longitud = longitud;
     }
 
     public int getVueltasCantidad() {
         return vueltasCantidad;
     }
 
+    public void setVueltasCantidad(int vueltasCantidad) {
+        this.vueltasCantidad = vueltasCantidad;
+    }
+
     public List<SponsorContrato> getSponsors() {
         return sponsors;
     }
 
+    public void setSponsors(List<SponsorContrato> sponsors) {
+        this.sponsors = sponsors;
+    }
+
+////////////////////////////////////////////////////////////////
     @Override
     public void agregar() {
         

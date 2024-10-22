@@ -4,7 +4,9 @@ import com.example.parcial.interfaces.ISponsoreable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Equipo implements ISponsoreable{
+public class Equipo 
+            implements ISponsoreable{
+
     private String nombre;
     private List<Piloto> pilotos;
     private List<Mecanico> mecanicos;
@@ -13,11 +15,11 @@ public class Equipo implements ISponsoreable{
 
 
     public Equipo(String nombre, Ingeniero ingenieroPrincipal) {
-        this.nombre = nombre;
-        this.pilotos = new ArrayList<>();
-        this.mecanicos = new ArrayList<>();
-        this.ingenieroPrincipal = ingenieroPrincipal;
-        this.sponsors = new ArrayList<>();
+        setNombre(nombre);
+        setIngenieroPrincipal(ingenieroPrincipal);
+        setPilotos(pilotos);
+        setMecanicos(mecanicos);
+        setSponsors(sponsors);
     }
 
     public void agregarPiloto(Piloto piloto) {
@@ -32,12 +34,24 @@ public class Equipo implements ISponsoreable{
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public List<Piloto> getPilotos() {
         return pilotos;
     }
 
+    public void setPilotos(List<Piloto> pilotos) {
+        this.pilotos = pilotos;
+    }
+
     public List<Mecanico> getMecanicos() {
         return mecanicos;
+    }
+
+    public void setMecanicos(List<Mecanico> mecanicos) {
+        this.mecanicos = mecanicos;
     }
 
     public Ingeniero getIngenieroPrincipal() {
@@ -52,10 +66,15 @@ public class Equipo implements ISponsoreable{
         return sponsors;
     }
 
+    public void setSponsors(List<SponsorContrato> sponsors) {
+        this.sponsors = sponsors;
+    }
+
     public void agregarSponsor(SponsorContrato sponsor) {
         sponsors.add(sponsor);
     }
 
+////////////////////////////////////////////////////////////////
     @Override
     public void agregar(SponsorContrato sc) {
         

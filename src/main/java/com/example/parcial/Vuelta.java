@@ -8,10 +8,10 @@ public class Vuelta {
     private Double duracionVuelta;
 
     public Vuelta(Piloto piloto, Equipo equipo, Circuito circuito, Double duracionVuelta){
-        this.piloto = piloto;
-        this.equipo = equipo;
-        this.circuito = circuito;
-        this.duracionVuelta = duracionVuelta;
+        setCircuito(circuito);
+        setDuracionVuelta(duracionVuelta);
+        setEquipo(equipo);
+        setPiloto(piloto);
     }
 
     public Piloto getPiloto() {

@@ -4,7 +4,7 @@ public class Sponsor {
     private String nombre;
 
     public Sponsor(String nombre) {
-        this.nombre = nombre;
+        setNombre(nombre);
     }
 
     public String getNombre() {
