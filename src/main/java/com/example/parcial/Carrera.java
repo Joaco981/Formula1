@@ -8,11 +8,13 @@ public class Carrera {
     private LocalDate fecha;
     private Circuito circuito;
     private List<Piloto> participantes;
+    private List<Vuelta> vueltas;
     
     
-    public Carrera(LocalDate fecha, Circuito circuito) {
+    public Carrera(LocalDate fecha, Circuito circuito, List<Vuelta> vueltas) {
         this.fecha = fecha;
         this.circuito = circuito;
+        this.vueltas = new ArrayList<>();
         this.participantes = new ArrayList<>();
     }
 
@@ -40,4 +42,15 @@ public class Carrera {
         this.participantes = participantes;
     }
 
+    public List<Vuelta> getVueltas() {
+        return vueltas;
+    }
+
+    public void setVueltas(List<Vuelta> vueltas) {
+        this.vueltas = vueltas;
+    }
+    
+    public void agregarVuelta(Vuelta vuelta) {
+        vueltas.add(vuelta);
+    }
 }

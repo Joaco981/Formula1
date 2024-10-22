@@ -7,12 +7,12 @@ import com.example.parcial.interfaces.ISponsoreable;
 
 public class Circuito implements ISponsoreable{
     private String nombre;
-    private String longitud;
+    private int longitud;
     private int vueltasCantidad;
     private List<SponsorContrato> sponsors;
 
 
-    public Circuito(String nombre, String longitud, int vueltasCantidad) {
+    public Circuito(String nombre, int longitud, int vueltasCantidad) {
         this.nombre = nombre;
         this.longitud = longitud;
         this.vueltasCantidad = vueltasCantidad;
@@ -23,7 +23,7 @@ public class Circuito implements ISponsoreable{
         return nombre;
     }
 
-    public String getLongitud() {
+    public int getLongitud() {
         return longitud;
     }
 
