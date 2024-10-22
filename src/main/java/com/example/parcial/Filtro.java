@@ -24,7 +24,7 @@ public class Filtro {
                       .collect(Collectors.toList());
     }
 
-    public List<Vuelta> filtrarPorTiempo (List<Vuelta> vueltas, int tiempoEspecifico) {
+    public List<Vuelta> filtrarPorTiempo (List<Vuelta> vueltas, double tiempoEspecifico) {
         return vueltas.stream()
                       .filter(vuelta -> vuelta.getDuracionVuelta() > tiempoEspecifico)
                       .collect(Collectors.toList());
