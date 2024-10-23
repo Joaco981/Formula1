@@ -109,14 +109,14 @@ public class Equipo
 
 
     @Override
-    public int getSponsorHabilitados() {
+    public List<SponsorContrato> getSponsorHabilitados() {
         for (SponsorContrato sponsorContrato : sponsors) {
             if (sponsorContrato.getFechaHasta() != null) {
                 sponsorsHabilitados.add(sponsorContrato);
             }
         }
 
-        return sponsorsHabilitados.size();
+        return sponsorsHabilitados;
     }
 
 }
