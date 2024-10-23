@@ -4,10 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.parcial.interfaces.INombreParaLED;
 import com.example.parcial.interfaces.ISponsoreable;
 
 public class Circuito 
-            implements ISponsoreable{
+            implements ISponsoreable, INombreParaLED {
 
     private String nombre;
     private int longitud;
@@ -97,6 +98,11 @@ public class Circuito
         }
 
         return sponsorsHabilitados;
+    }
+
+    @Override
+    public String getNombreParaLED() {
+        return getNombre();
     }
 
 

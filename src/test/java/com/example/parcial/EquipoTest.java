@@ -221,4 +221,6 @@ public class EquipoTest {
         assertEquals(0, e1.getSponsors().size());
     }
     
+
+    
 }    

@@ -1,13 +1,14 @@
 package com.example.parcial;
 
 import com.example.parcial.interfaces.ISponsoreable;
+import com.example.parcial.interfaces.INombreParaLED;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Equipo 
-            implements ISponsoreable{
+            implements ISponsoreable, INombreParaLED {
 
     private String nombre;
     private List<Piloto> pilotos;
@@ -121,6 +122,11 @@ public class Equipo
         }
 
         return sponsorsHabilitados;
+    }
+
+    @Override
+    public String getNombreParaLED() {
+        return getNombre();
     }
 
 }

@@ -41,13 +41,13 @@ public class FiltroTest {
         Ingeniero ingeniero = new Ingeniero("Juan Perez", "Argentina");
         Equipo equipo = new Equipo("Williams", ingeniero);
 
-        Vuelta vuelta1 = new Vuelta(piloto, equipo, estadosUnidos, 90.5);
-        Vuelta vuelta2 = new Vuelta(piloto, equipo, estadosUnidos, 88.1);
-        Vuelta vuelta3 = new Vuelta(piloto, equipo, estadosUnidos, 91.3);
+        Vuelta vuelta1 = new Vuelta(piloto, equipo, estadosUnidos, 1, 90.5);
+        Vuelta vuelta2 = new Vuelta(piloto, equipo, estadosUnidos, 2, 88.1);
+        Vuelta vuelta3 = new Vuelta(piloto, equipo, estadosUnidos, 3, 91.3);
 
-        Vuelta vuelta4 = new Vuelta(piloto, equipo, singapur, 90.5);
-        Vuelta vuelta5 = new Vuelta(piloto, equipo, singapur, 88.1);
-        Vuelta vuelta6 = new Vuelta(piloto, equipo, singapur, 91.3);
+        Vuelta vuelta4 = new Vuelta(piloto, equipo, singapur, 1,90.5);
+        Vuelta vuelta5 = new Vuelta(piloto, equipo, singapur, 2,88.1);
+        Vuelta vuelta6 = new Vuelta(piloto, equipo, singapur, 3, 91.3);
 
         carrera.agregarVuelta(vuelta3);
         carrera.agregarVuelta(vuelta2);
@@ -98,9 +98,9 @@ public class FiltroTest {
         Circuito estadosUnidos = new Circuito("Austin", 1234, 56);
         Carrera carrera = new Carrera(LocalDate.of(2024, 10, 21 ), estadosUnidos, new ArrayList<>(), new ArrayList<>());
 
-        Vuelta vuelta1 = new Vuelta(piloto, equipo, estadosUnidos, 90.5);
-        Vuelta vuelta2 = new Vuelta(piloto, equipo, estadosUnidos, 88.1);
-        Vuelta vuelta3 = new Vuelta(piloto, equipo, estadosUnidos, 91.3);
+        Vuelta vuelta1 = new Vuelta(piloto, equipo, estadosUnidos, 1, 90.5);
+        Vuelta vuelta2 = new Vuelta(piloto, equipo, estadosUnidos, 2, 88.1);
+        Vuelta vuelta3 = new Vuelta(piloto, equipo, estadosUnidos, 3, 91.3);
 
         carrera.agregarVuelta(vuelta1);
         carrera.agregarVuelta(vuelta2);

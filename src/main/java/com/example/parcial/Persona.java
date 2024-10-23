@@ -1,6 +1,8 @@
 package com.example.parcial;
 
-public class Persona {
+import com.example.parcial.interfaces.INombreParaLED;
+
+public class Persona implements INombreParaLED {
     private String nombre;
     private String nacionalidad;
 
@@ -23,6 +25,11 @@ public class Persona {
 
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
+    }
+
+    @Override
+    public String getNombreParaLED() {
+        return "Piloto: " + nombre;
     }
 
 

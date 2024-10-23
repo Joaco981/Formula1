@@ -55,9 +55,9 @@ public class CarreraTest {
         Ingeniero ingeniero = new Ingeniero("Juan Perez", "Argentina");
         Equipo equipo = new Equipo("Williams", ingeniero);
 
-        Vuelta vuelta1 = new Vuelta(piloto, equipo, circuito, 90.5); 
-        Vuelta vuelta2 = new Vuelta(piloto, equipo, circuito, 88.1); 
-        Vuelta vuelta3 = new Vuelta(piloto, equipo, circuito, 91.3); 
+        Vuelta vuelta1 = new Vuelta(piloto, equipo, circuito, 1, 90.5); 
+        Vuelta vuelta2 = new Vuelta(piloto, equipo, circuito, 2, 88.1); 
+        Vuelta vuelta3 = new Vuelta(piloto, equipo, circuito, 3, 91.3); 
 
         c1.agregarVuelta(vuelta3);
         c1.agregarVuelta(vuelta2);

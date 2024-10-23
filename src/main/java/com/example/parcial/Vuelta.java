@@ -5,13 +5,15 @@ public class Vuelta {
     private Piloto piloto;
     private Equipo equipo;
     private Circuito circuito;
+    private int numeroVuelta;
     private Double duracionVuelta;
 
-    public Vuelta(Piloto piloto, Equipo equipo, Circuito circuito, Double duracionVuelta){
-        setCircuito(circuito);
-        setDuracionVuelta(duracionVuelta);
-        setEquipo(equipo);
+    public Vuelta(Piloto piloto, Equipo equipo, Circuito circuito, int numeroVuelta, Double duracionVuelta){
         setPiloto(piloto);
+        setEquipo(equipo);
+        setCircuito(circuito);
+        setNumeroVuelta(numeroVuelta);
+        setDuracionVuelta(duracionVuelta);
     }
 
     public Piloto getPiloto() {
@@ -36,6 +38,14 @@ public class Vuelta {
 
     public void setCircuito(Circuito circuito) {
         this.circuito = circuito;
+    }
+
+    public int getNumeroVuelta() {
+        return numeroVuelta;
+    }
+
+    public void setNumeroVuelta(int numeroVuelta) {
+        this.numeroVuelta = numeroVuelta;
     }
 
     public Double getDuracionVuelta() {
