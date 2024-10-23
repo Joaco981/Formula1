@@ -82,6 +82,57 @@ public class CarreraTest {
         assertEquals(3, c1.getVueltas().size());
     }
 
+    @Test
+    void crear_circuito_y_agregar_sponsors_test(){
+
+        Circuito circuito = new Circuito("Austin", 1234, 56);
+        LocalDate fechaCarrera = LocalDate.of(2024, 10, 21 );
+        Carrera c1 = new Carrera(fechaCarrera, circuito, new ArrayList<>(), new ArrayList<>());
+
+        Sponsor sponsor = new Sponsor("Mercado Libre");
+        SponsorContrato contrato = new SponsorContrato(sponsor, "Argentina", LocalDate.of(2024, 10, 21), LocalDate.of(2025, 11, 21));
+
+        circuito.agregar(contrato);
+
+        assert(c1 != null);
+        assertEquals(1, circuito.getSponsors().size());
+        assertEquals("Mercado Libre", circuito.getSponsors().get(0).getSponsor().getNombre());
+    }
+
+    @Test
+    void crear_circuito_y_agregar_sponsors_por_ubicacion_test(){
+
+        Circuito circuito = new Circuito("Austin", 1234, 56);
+        LocalDate fechaCarrera = LocalDate.of(2024, 10, 21 );
+        Carrera c1 = new Carrera(fechaCarrera, circuito, new ArrayList<>(), new ArrayList<>());
+
+        Sponsor sponsor = new Sponsor("Mercado Libre");
+
+        circuito.agregar(sponsor, "Argentina", LocalDate.of(2024, 10, 21));
+
+        assert(c1 != null);
+        assertEquals(1, circuito.getSponsors().size()); 
+    }
+
+    @Test
+    void crear_circuito_y_agregar_sponsor_y_removerlos_test(){
+
+        Circuito circuito = new Circuito("Austin", 1234, 56);
+        LocalDate fechaCarrera = LocalDate.of(2024, 10, 21 );
+        Carrera c1 = new Carrera(fechaCarrera, circuito, new ArrayList<>(), new ArrayList<>());
+
+        Sponsor sponsor = new Sponsor("Mercado Libre");
+        SponsorContrato contrato = new SponsorContrato(sponsor, "Argentina", LocalDate.of(2024, 10, 21), LocalDate.of(2025, 11, 21));
+
+        circuito.agregar(contrato);
+
+        assert(c1 != null);
+        assertEquals(1, circuito.getSponsors().size());
+
+        circuito.remover(sponsor);
+        assertEquals(0, circuito.getSponsors().size());
+    }
+
     
 }
 

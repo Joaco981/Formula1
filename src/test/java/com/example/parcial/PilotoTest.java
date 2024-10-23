@@ -18,9 +18,9 @@ public class PilotoTest {
     @Test
     void prueba_de_que_anda_la_interfaz_test(){
         Piloto piloto = new Piloto("Juan", "Argentina");
-        SponsorContrato sc = new SponsorContrato(new Sponsor("Coca Cola"), "Argentina", null, null);
+        SponsorContrato contrato = new SponsorContrato(new Sponsor("Coca Cola"), "Argentina", null, null);
         
-        piloto.agregar(sc);
+        piloto.agregar(contrato);
         assertEquals(1, piloto.getSponsors().size());
     }
 

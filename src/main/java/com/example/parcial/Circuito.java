@@ -57,26 +57,31 @@ public class Circuito
         return sponsors;
     }
 
+
     @Override
     public void agregar(SponsorContrato sponsorContrato) {
         sponsors.add(sponsorContrato);
     }
 
     @Override
-    public void agregar(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
-        var sc1 = new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta);
+    public void agregar(Sponsor sponsor, String ubicacion, LocalDate fechaDesde) {
+        var sc1 = new SponsorContrato(sponsor, ubicacion, fechaDesde, null);
         this.agregar(sc1);
-    }
-
-    @Override
-    public void remover(SponsorContrato sponsorContrato) {
-        sponsors.remove(sponsorContrato);
     }
 
     @Override
     public void remover(Sponsor sponsor) {
         sponsors.removeIf(sponsorContrato -> sponsorContrato.getSponsor().equals(sponsor));
     }
+
+    @Override
+    public void remover(Sponsor sponsor, String ubicacion) {
+        sponsors.removeIf(sponsorContrato -> 
+            sponsorContrato.getSponsor().equals(sponsor) && 
+            sponsorContrato.getUbicacion().equals(ubicacion)
+        );
+    }
+
 
     @Override
     public void remover(String nombreSponsor) {

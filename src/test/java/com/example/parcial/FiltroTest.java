@@ -45,9 +45,17 @@ public class FiltroTest {
         Vuelta vuelta2 = new Vuelta(piloto, equipo, estadosUnidos, 88.1);
         Vuelta vuelta3 = new Vuelta(piloto, equipo, estadosUnidos, 91.3);
 
+        Vuelta vuelta4 = new Vuelta(piloto, equipo, singapur, 90.5);
+        Vuelta vuelta5 = new Vuelta(piloto, equipo, singapur, 88.1);
+        Vuelta vuelta6 = new Vuelta(piloto, equipo, singapur, 91.3);
+
         carrera.agregarVuelta(vuelta3);
         carrera.agregarVuelta(vuelta2);
         carrera.agregarVuelta(vuelta1);
+
+        carrera2.agregarVuelta(vuelta6);
+        carrera2.agregarVuelta(vuelta5);
+        carrera2.agregarVuelta(vuelta4);
 
         Filtro f1 = new Filtro();
 

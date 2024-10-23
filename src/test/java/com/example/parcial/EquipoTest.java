@@ -81,6 +81,31 @@ public class EquipoTest {
         assertEquals(sponsor2, e1.getSponsors().get(1).getSponsor());
     }
 
+
+    @Test
+    void crear_equipo_y_agregar_sponsors_por_ubicacion_y_fecha_test(){
+
+        Piloto p1 = new Piloto("Juan", "Argentina");
+        Piloto p2 = new Piloto("Ivan", "India");
+        Mecanico m1 = new Mecanico("Joaco", "Argentina");
+        Mecanico m2 = new Mecanico("Camello", "Argentina");
+        Ingeniero inge = new Ingeniero("Ramiro", "Argentina");
+        Equipo e1 = new Equipo("esencia", inge);
+
+        e1.agregarPiloto(p1);
+        e1.agregarPiloto(p2);
+        e1.agregarMecanico(m1);
+        e1.agregarMecanico(m2);
+
+        Sponsor sponsor1 = new Sponsor("Sponsor 1");
+        Sponsor sponsor2 = new Sponsor("Sponsor 2");
+
+        e1.agregar(sponsor1, "Corrientes", LocalDate.of(2022, 1, 1));
+        e1.agregar(sponsor2, "Resistencia", LocalDate.of(2022, 12, 31));
+
+        assertEquals(2, e1.getSponsors().size());
+    }
+
     @Test
     void crear_equipo_y_asignarle_sponsors_y_luego_eliminarlos_test(){
 
@@ -128,6 +153,52 @@ public class EquipoTest {
     }
     
     @Test
+    void remover_sponsor_por_sponsor_test() {
+        Piloto p1 = new Piloto("Juan", "Argentina");
+        Piloto p2 = new Piloto("Ivan", "India");
+        Mecanico m1 = new Mecanico("Joaco", "Argentina");       
+        Mecanico m2 = new Mecanico("Camello", "Argentina");       
+        Ingeniero inge = new Ingeniero("Ramiro", "Argentina");
+        Equipo e1 = new Equipo("esencia", inge);
+
+        e1.agregarPiloto(p1);
+        e1.agregarPiloto(p2);    
+        e1.agregarMecanico(m1);
+        e1.agregarMecanico(m2);
+
+        Sponsor sponsor1 = new Sponsor("Arcor");        
+
+        e1.agregar(new SponsorContrato(sponsor1, "Corrientes", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31)));
+        e1.agregar(new SponsorContrato(sponsor1, "Resistencia", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31)));
+
+        e1.remover(sponsor1);
+        assertEquals(0, e1.getSponsors().size());
+    }
+
+    @Test
+    void remover_sponsor_por_ubicacion_test() {
+        Piloto p1 = new Piloto("Juan", "Argentina");
+        Piloto p2 = new Piloto("Ivan", "India");
+        Mecanico m1 = new Mecanico("Joaco", "Argentina");       
+        Mecanico m2 = new Mecanico("Camello", "Argentina");       
+        Ingeniero inge = new Ingeniero("Ramiro", "Argentina");
+        Equipo e1 = new Equipo("esencia", inge);
+
+        e1.agregarPiloto(p1);
+        e1.agregarPiloto(p2);    
+        e1.agregarMecanico(m1);
+        e1.agregarMecanico(m2);
+
+        Sponsor sponsor1 = new Sponsor("Arcor");
+
+        e1.agregar(new SponsorContrato(sponsor1, "Corrientes", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31)));
+        e1.agregar(new SponsorContrato(sponsor1, "Resistencia", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31)));
+
+        e1.remover(sponsor1, "Corrientes");
+        assertEquals(1, e1.getSponsors().size());
+    }
+
+    @Test
     void remover_sponsor_por_string_test() {
         Piloto p1 = new Piloto("Juan", "Argentina");
         Piloto p2 = new Piloto("Ivan", "India");
@@ -148,55 +219,6 @@ public class EquipoTest {
 
         e1.remover("Arcor");
         assertEquals(0, e1.getSponsors().size());
-    }
-
-    @Test
-    void remover_sponsor_por_sponsor_test() {
-        Piloto p1 = new Piloto("Juan", "Argentina");
-        Piloto p2 = new Piloto("Ivan", "India");
-        Mecanico m1 = new Mecanico("Joaco", "Argentina");       
-        Mecanico m2 = new Mecanico("Camello", "Argentina");       
-        Ingeniero inge = new Ingeniero("Ramiro", "Argentina");
-        Equipo e1 = new Equipo("esencia", inge);
-
-        e1.agregarPiloto(p1);
-        e1.agregarPiloto(p2);    
-        e1.agregarMecanico(m1);
-        e1.agregarMecanico(m2);
-
-        Sponsor sponsor1 = new Sponsor("Arcor");
-
-        e1.agregar(new SponsorContrato(sponsor1, "Corrientes", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31)));
-        e1.agregar(new SponsorContrato(sponsor1, "Resistencia", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31)));
-
-        e1.remover(sponsor1);
-        assertEquals(0, e1.getSponsors().size());
-    }
-
-    @Test
-    void remover_sponsor_por_contrato_test() {
-        Piloto p1 = new Piloto("Juan", "Argentina");
-        Piloto p2 = new Piloto("Ivan", "India");
-        Mecanico m1 = new Mecanico("Joaco", "Argentina");       
-        Mecanico m2 = new Mecanico("Camello", "Argentina");       
-        Ingeniero inge = new Ingeniero("Ramiro", "Argentina");
-        Equipo e1 = new Equipo("esencia", inge);
-
-        e1.agregarPiloto(p1);
-        e1.agregarPiloto(p2);    
-        e1.agregarMecanico(m1);
-        e1.agregarMecanico(m2);
-
-        Sponsor sponsor1 = new Sponsor("Arcor");        
-
-        SponsorContrato contrato1 = new SponsorContrato(sponsor1, "Corrientes", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31));
-        SponsorContrato contrato2 = new SponsorContrato(sponsor1, "Resistencia", LocalDate.of(2022, 1, 1), LocalDate.of(2022, 12, 31));
-
-        e1.agregar(contrato1);
-        e1.agregar(contrato2);
-
-        e1.remover(contrato1);
-        assertEquals(1, e1.getSponsors().size());
     }
     
 }    
