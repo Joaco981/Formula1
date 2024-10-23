@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class CircuitoTest {
+public class CarreraTest {
     @Test
     void crear_carrera_test(){
         
         Circuito lemans = new Circuito("24 hs Le Mans", 234, 56);
         LocalDate fechaCarrera = LocalDate.of(2024, 10, 21);
-        Carrera francia = new Carrera(fechaCarrera, lemans, new ArrayList<>());
+        Carrera francia = new Carrera(fechaCarrera, lemans, new ArrayList<>(), new ArrayList<>());
 
         assertEquals(fechaCarrera, francia.getFecha());
         assertEquals("24 hs Le Mans", francia.getCircuito().getNombre());
@@ -23,12 +23,33 @@ public class CircuitoTest {
 
     }
 
+    @Test
+    void crear_carrera_y_saber_quienes_participaron_test(){
+        Piloto piloto = new Piloto("Franco Colapinto", "Argentina");
+        Piloto piloto2 = new Piloto("Franco Colapinto", "Argentina");
+        Piloto piloto3 = new Piloto("Franco Colapinto", "Argentina");
+
+
+        Circuito circuito = new Circuito("Austin", 1234, 56);
+        LocalDate fechaCarrera = LocalDate.of(2024, 10, 21 );
+        Carrera c1 = new Carrera(fechaCarrera, circuito, new ArrayList<>(), new ArrayList<>());
+
+        c1.getParticipantes().add(piloto);
+        c1.getParticipantes().add(piloto2);
+        c1.getParticipantes().add(piloto3);
+
+        
+        assert(c1 != null);
+        assertEquals(3, c1.getParticipantes().size());
+        assertEquals("Franco Colapinto", c1.getParticipantes().get(0).getNombre());
+    }
+
 
     @Test
     void registrar_vuelta_del_piloto_en_circuito() {
         Circuito circuito = new Circuito("Austin", 1234, 56);
         LocalDate fechaCarrera = LocalDate.of(2024, 10, 21 );
-        Carrera c1 = new Carrera(fechaCarrera, circuito, new ArrayList<>());
+        Carrera c1 = new Carrera(fechaCarrera, circuito, new ArrayList<>(), new ArrayList<>());
 
         Piloto piloto = new Piloto("Franco Colapinto", "Argentina");
         Ingeniero ingeniero = new Ingeniero("Juan Perez", "Argentina");

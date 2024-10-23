@@ -21,7 +21,7 @@ public class PilotoTest {
         SponsorContrato sc = new SponsorContrato(new Sponsor("Coca Cola"), "Argentina", null, null);
         
         piloto.agregar(sc);
-        assertEquals(1, piloto.getSponsorContrato().size());
+        assertEquals(1, piloto.getSponsors().size());
     }
 
     

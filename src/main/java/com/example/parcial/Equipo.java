@@ -23,6 +23,7 @@ public class Equipo
         setPilotos(new ArrayList<>());
         setMecanicos(new ArrayList<>());
         setSponsors(new ArrayList<>());
+        setSponsorsHabilitados(new ArrayList<>());
     }
 
     public void agregarPiloto(Piloto piloto) {
@@ -66,18 +67,18 @@ public class Equipo
         this.ingenieroPrincipal = ingenieroPrincipal;
     } 
 
-    public List<SponsorContrato> getSponsors() {
-        return sponsors;
-    }
-
     public void setSponsors(List<SponsorContrato> sponsors) {
         this.sponsors = sponsors;
+    }
+
+    public void setSponsorsHabilitados(List<SponsorContrato> sponsorsHabilitados) {
+        this.sponsorsHabilitados = sponsorsHabilitados;
     }
 
 ////////////////////////////////////////////////////////////////
 
     @Override
-    public List<SponsorContrato> getSponsorContrato() {
+    public List<SponsorContrato> getSponsors() {
         return sponsors;
     }
 
@@ -93,8 +94,8 @@ public class Equipo
     }
 
     @Override
-    public void remover(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
-        sponsors.remove(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
+    public void remover(SponsorContrato sponsorContrato) {
+        sponsors.remove(sponsorContrato);
     }
 
     @Override

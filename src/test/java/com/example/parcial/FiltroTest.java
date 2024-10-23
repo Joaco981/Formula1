@@ -30,12 +30,12 @@ public class FiltroTest {
     }
     
     @Test
-    void filtrar_cant_de_vueltas_por_circuito_test() {
+    void filtrar_cant_de_vueltas_por_carrera_test() {
         Circuito estadosUnidos = new Circuito("Austin", 1234, 56);
         Circuito singapur = new Circuito("Baku", 1234, 56);
         
-        Carrera carrera = new Carrera(LocalDate.of(2024, 10, 21 ), estadosUnidos, new ArrayList<>());
-        Carrera carrera2 = new Carrera(LocalDate.of(2024, 10, 21 ), singapur, new ArrayList<>());
+        Carrera carrera = new Carrera(LocalDate.of(2024, 10, 21 ), estadosUnidos, new ArrayList<>(), new ArrayList<>());
+        Carrera carrera2 = new Carrera(LocalDate.of(2024, 10, 21 ), singapur, new ArrayList<>(), new ArrayList<>());
         
         Piloto piloto = new Piloto("Franco Colapinto", "Argentina");
         Ingeniero ingeniero = new Ingeniero("Juan Perez", "Argentina");
@@ -88,7 +88,7 @@ public class FiltroTest {
         Equipo equipo = new Equipo("Williams", ingeniero);
         
         Circuito estadosUnidos = new Circuito("Austin", 1234, 56);
-        Carrera carrera = new Carrera(LocalDate.of(2024, 10, 21 ), estadosUnidos, new ArrayList<>());
+        Carrera carrera = new Carrera(LocalDate.of(2024, 10, 21 ), estadosUnidos, new ArrayList<>(), new ArrayList<>());
 
         Vuelta vuelta1 = new Vuelta(piloto, equipo, estadosUnidos, 90.5);
         Vuelta vuelta2 = new Vuelta(piloto, equipo, estadosUnidos, 88.1);

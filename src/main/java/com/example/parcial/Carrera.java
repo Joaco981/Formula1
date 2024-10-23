@@ -11,7 +11,7 @@ public class Carrera {
     private List<Vuelta> vueltas;
     
     
-    public Carrera(LocalDate fecha, Circuito circuito, List<Vuelta> vueltas) {
+    public Carrera(LocalDate fecha, Circuito circuito, List<Vuelta> vueltas, List<Piloto> participantes) {
         setCircuito(circuito);
         setFecha(fecha);
         setVueltas(new ArrayList<>());

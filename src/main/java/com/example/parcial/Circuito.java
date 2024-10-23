@@ -47,17 +47,13 @@ public class Circuito
         this.vueltasCantidad = vueltasCantidad;
     }
 
-    public List<SponsorContrato> getSponsors() {
-        return sponsors;
-    }
-
     public void setSponsors(List<SponsorContrato> sponsors) {
         this.sponsors = sponsors;
     }
 
 ////////////////////////////////////////////////////////////////
     @Override
-    public List<SponsorContrato> getSponsorContrato() {
+    public List<SponsorContrato> getSponsors() {
         return sponsors;
     }
 
@@ -73,8 +69,8 @@ public class Circuito
     }
 
     @Override
-    public void remover(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
-        sponsors.remove(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
+    public void remover(SponsorContrato sponsorContrato) {
+        sponsors.remove(sponsorContrato);
     }
 
     @Override

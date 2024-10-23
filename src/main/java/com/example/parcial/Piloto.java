@@ -28,7 +28,7 @@ public class Piloto
 
 ////////////////////////////////////////////////////////////////
     @Override
-    public List<SponsorContrato> getSponsorContrato() {
+    public List<SponsorContrato> getSponsors() {
         return sponsors;
     }
 
@@ -44,8 +44,8 @@ public class Piloto
     }
 
     @Override
-    public void remover(Sponsor sponsor, String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
-        sponsors.remove(new SponsorContrato(sponsor, ubicacion, fechaDesde, fechaHasta));
+    public void remover(SponsorContrato sponsorContrato) {
+        sponsors.remove(sponsorContrato);
     }
 
     @Override
